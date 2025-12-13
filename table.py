@@ -3,13 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 df=pd.read_csv('english.csv')
-values = [df['listening'].mean(),
+values = [[df['listening'].mean(),
           df['reading'].mean(),
           df['writing'].mean(),
-          df['speaking'].mean()]
+          df['speaking'].mean()]]
 
 labels = ['listening', 'reading', 'writing', 'speaking']
-plt.pie(values, labels=labels, autopct='%1.1f%%')
+plt.table(cellText=values,colLabels=labels)
 plt.savefig('my.svg')
 plt.tight_layout()
 plt.show()
